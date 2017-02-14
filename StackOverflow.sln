@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2FCC34CC-C77D-4463-BEA6-24BD0B0DA2BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{99F3213E-80CC-48C9-AC20-09146F4EA32B}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StackOverflow", "src\StackOverflow\StackOverflow.xproj", "{B2B09C2F-152F-42F1-B25B-4FB1DA70341E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B09C2F-152F-42F1-B25B-4FB1DA70341E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B09C2F-152F-42F1-B25B-4FB1DA70341E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B09C2F-152F-42F1-B25B-4FB1DA70341E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B09C2F-152F-42F1-B25B-4FB1DA70341E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2B09C2F-152F-42F1-B25B-4FB1DA70341E} = {2FCC34CC-C77D-4463-BEA6-24BD0B0DA2BA}
+	EndGlobalSection
+EndGlobal
