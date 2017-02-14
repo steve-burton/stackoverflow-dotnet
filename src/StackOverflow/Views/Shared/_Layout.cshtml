@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+@using System.Security.Claims
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@User.Identity.Name</li>
+
+                        @using(Html.BeginForm("Logoff", "Account"))
+                        {
+
+                            <li><input type="submit" class="btn" value="Log out"/></li>
+                         }
+                     }
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container center-align">
+        @RenderBody()
+    </div>
+</body>
+</html>

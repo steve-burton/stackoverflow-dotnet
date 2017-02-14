@@ -1,0 +1,26 @@
+﻿@model IEnumerable<StackOverflow.Models.Question>
+
+@{
+    ViewData["Title"] = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Here are all the questions</h2>
+<hr />
+
+@if(Model.Any())
+{
+    <ul>
+        @foreach(var listItem in Model)
+        {
+            <li>@Html.DisplayFor(modelItem => listItem.Title) | @Html.ActionLink("Details", "Details", new { id = listItem.QuestionId })</li>
+
+        }
+    </ul>
+}
+else
+{
+    <p>No Questions have been added</p>
+}
+
+@Html.ActionLink("Create a Question", "Create")
