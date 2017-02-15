@@ -25,7 +25,7 @@ namespace StackOverflow.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.QuestionId = new SelectList(_db.Questions, "Questiond", "Title");
+            ViewBag.QuestionId = new SelectList(_db.Questions, "QuestionId", "Title");
             return View();
         }
 
