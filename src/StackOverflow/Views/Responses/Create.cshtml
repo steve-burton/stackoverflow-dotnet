@@ -15,8 +15,8 @@
     <label>Response</label>
     @Html.EditorFor(model => model.Body)
 
-    <label>Question</label>
-    @Html.DropDownList("QuestionId");
+    @Html.LabelFor(model => model.QuestionId)
+    @Html.DropDownList("QuestionId")
 
     <input type="submit" value="Response" />
 }
