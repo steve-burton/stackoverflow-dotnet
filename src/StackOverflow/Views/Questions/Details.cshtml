@@ -11,6 +11,12 @@
 <h3>@Html.DisplayFor(model => model.Title)</h3>
 <h5>@Html.DisplayFor(model => model.Body)</h5>
 
-@Html.ActionLink("Answer this question", "Response")
+@foreach(var listItem in Model.Responses)
+{
+    <h4>@Html.DisplayFor(modelItem => listItem.Body) </h4>
+
+}
+
+@Html.ActionLink("Answer this question", "Create", "Responses")
 
 @Html.ActionLink("Back to list", "Index")

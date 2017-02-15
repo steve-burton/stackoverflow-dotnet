@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using StackOverflow.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace StackOverflow.Controllers
@@ -21,9 +23,18 @@ namespace StackOverflow.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Create()
         {
+            ViewBag.QuestionId = new SelectList(_db.Questions, "Questiond", "Title");
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Response response)
+        {
+            _db.Responses.Add(response);
+            _db.SaveChanges();
+            return RedirectToAction("Details", "Questions");
         }
     }
 }

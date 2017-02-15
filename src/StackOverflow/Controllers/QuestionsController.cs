@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using StackOverflow.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace StackOverflow.Controllers
 {
@@ -43,8 +44,12 @@ namespace StackOverflow.Controllers
 
         public IActionResult Details(int id)
         {
-            var thisQuestion = _db.Questions.FirstOrDefault(questions => questions.QuestionId == id);
+            var thisQuestion = _db.Questions
+                .Include(questions => questions.Responses)
+                .FirstOrDefault(questions => questions.QuestionId == id);
+            
             return View(thisQuestion);
+                
         }
     }
 }
